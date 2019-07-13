@@ -11,15 +11,15 @@ distX,
 distY,
 threshold = 150, //required min distance traveled to be considered swipe
 restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-allowedTime = 300, // maximum time allowed to travel that distance
+allowedTime = 10000, // maximum time allowed to travel that distance
 elapsedTime,
 startTime;
 // swap event block
 
-debugger
-touchsurface.addEventListener('ontouchstart', function(e){
+
+touchsurface.addEventListener('touchstart', function(e){
       // alert("Hello World!");
-      if (e.target.tagName === 'footer'){
+      if (e.target.tagName === 'FOOTER'){
         if (counterOfPage === 0) {
              pageFirstForward();
              counterOfPage = 1
@@ -41,10 +41,12 @@ touchsurface.addEventListener('ontouchstart', function(e){
   }, false)
 
 touchsurface.addEventListener('touchmove', function(e){
+
     e.preventDefault() // prevent scrolling when inside DIV
 }, false)
 
 touchsurface.addEventListener('touchend', function(e){
+
     var touchobj = e.changedTouches[0]
     distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
     distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
@@ -54,7 +56,7 @@ touchsurface.addEventListener('touchend', function(e){
             swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
         }
         else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-            swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+            swipedir = (distY < 0)? 'down' : 'up' // if dist traveled is negative, it indicates up swipe
         }
     }
     swapHandler(swipedir)
@@ -131,7 +133,7 @@ function moveElements(page, direction) {
   // get four stones
   var chunks = document.querySelectorAll('.chunk');
   // h2 from second page
-  var text = document.getElementById('pathogenesis');
+  var text = document.getElementById('pathogenesis-one');
 
   // var nav = document.querySelector('nav');
 

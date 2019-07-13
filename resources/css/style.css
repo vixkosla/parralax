@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
   height: 768px;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* universal style */
@@ -207,54 +210,66 @@ html, body {
 header h1 {
   position: absolute;
   font-size: 50px;
-  font-family: 'Gotham Pro', sans-serif;
+  /* font-family: 'Gotham Pro', sans-serif; */
   z-index: 1;
   color: #0d319c;
 
-  top: 140px;
+  top: 100px;
   left: 75px;
 }
 
-section h2 {
+#pathogenesis-one {
   position: absolute;
-  font-size: 35px;
-  font-family: 'Gotham Pro', sans-serif;
+  font-size: 55px;
+  text-align: center;
+  /* font-family: 'Gotham Pro', sans-serif; */
   z-index: 1;
   color: white;
 
   top: 1100px;
-  left: 350px;
+  left: 300px;
 
   transition-property: transform;
   transition-duration: 1000ms;
 }
 
+#pathogenesis-two {
+  position: absolute;
+  font-size: 35px;
+  /* font-family: 'Gotham Pro', sans-serif; */
+  z-index: 1;
+  color: white;
+
+  top: 1580px;
+  left: 130px;
+}
+
 .text {
-  font-family: 'Gotham Pro', sans-serif;
+  /* font-family: 'Gotham Pro', sans-serif; */
   color: #0d319c;
 
-  font-size: 35px;
+  font-size: 22px;
   position: absolute;
   z-index: 1;
 }
 
 .peak-one {
-  top: 397px;
+  top: 365px;
   left: 228px;
 }
 
 .peak-two {
-  top: 525px;
+  top: 472px;
   left: 364px;
 }
 
 .peak-three {
-  top: 272px;
+  top: 255px;
   left: 637px;
 }
 
 .peak-four {
-  top: 511px;
+  top: 456px;
   left: 785px;
 }
 
@@ -375,6 +390,7 @@ nav {
   left: 900px;
   filter: blur(3px);
 }
+
 
 .beta {
   position: absolute;

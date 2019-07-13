@@ -18,7 +18,7 @@ startTime;
 
 debugger
 touchsurface.addEventListener('ontouchstart', function(e){
-      alert("Hello World!");
+      // alert("Hello World!");
       if (e.target.tagName === 'footer'){
         if (counterOfPage === 0) {
              pageFirstForward();

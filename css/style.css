@@ -1,0 +1,405 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 768px;
+  overflow: hidden;
+}
+
+/* universal style */
+
+/* for side bar */
+
+.toggle-on {
+  transition-property: opacity;
+  transition-duration: 500ms;
+  opacity: 1 !important;
+}
+
+.toggle-off {
+  opacity: 0;
+}
+
+/* for elements */
+
+.drown-first {
+  transform: translateY(-200px);
+}
+
+.drown-second {
+  transform: translateY(-400px);
+}
+
+/* view screen */
+
+.first {
+  transform: translateY(-768px);
+}
+
+.second {
+  transform: translateY(-1536px);
+}
+
+/* layer 0 (z-index: 1) */
+
+.parralax {
+  margin: 0 auto;
+  width: 1024px;
+  height: 2304px;
+  overflow: hidden;
+  background-image: url("../images/roadmap.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-property: transform;
+  transition-duration: 500ms;
+}
+
+/* animation */
+
+.tip {
+  position: absolute;
+  /* background-color: #d63f2b; */
+  border-radius: 50%;
+  border: 1px solid #e38937;
+  opacity: 1;
+  /* box-shadow: inset 0 0 10px #e38937; */
+  animation-name: pulsate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+
+.red-tip-one {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ff1e00;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  top: 435px;
+  left: 285px;
+}
+
+.red-tip-two {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ff1e00;
+  opacity: 1;
+  width: 6px;
+  height: 6px;
+  top: 539px;
+  left: 484px;
+}
+
+.red-tip-three {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ff1e00;
+  opacity: 1;
+  width: 13px;
+  height: 13px;
+  top: 282px;
+  left: 582px;
+}
+
+.red-tip-four {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ff1e00;
+  opacity: 1;
+  width: 6px;
+  height: 6px;
+  top: 525px;
+  left: 829px;
+}
+
+.t-one {
+  width: 16px;
+  height: 16px;
+  top: 430px;
+  left: 280px;
+}
+
+.t-two {
+  width: 12px;
+  height: 12px;
+  top: 535px;
+  left: 480px;
+}
+
+.t-three {
+  width: 25px;
+  height: 25px;
+  top: 275px;
+  left: 575px;
+}
+
+.t-four {
+  width: 12px;
+  height: 12px;
+  top: 521px;
+  left: 825px;
+}
+
+.wave-one {
+  animation-delay: 0s;
+}
+
+.wave-two {
+  animation-delay: 0.4s;
+}
+
+.wave-three {
+  animation-delay: 0.8s;
+}
+
+.wave-four {
+  animation-delay: 1.2s;
+}
+
+@keyframes pulsate {
+  0% {
+    transform:scale(0.5);
+    opacity:0.85;
+    background-color: #e38937;
+  }
+  10% {
+    transform:scale(0.7);
+    opacity:0.8;
+  }
+  15% {
+    transform:scale(0.7);
+    opacity:0.7;
+  }
+  65% {
+    transform:scale(2.5);
+    opacity:0.3;
+  }
+  70%{
+    transform:scale(2.5);
+    opacity:0.4;
+  }
+  80% {
+    transform:scale(2.5);
+    opacity:0.5;
+  }
+  100% {
+    transform:scale(2.5);
+    opacity:0.6;
+  }
+}
+
+.fire {
+  transform: scale(4);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 1000ms;
+
+}
+
+/* text block */
+/* screen one */
+
+header h1 {
+  position: absolute;
+  font-size: 50px;
+  font-family: 'Gotham Pro', sans-serif;
+  z-index: 1;
+  color: #0d319c;
+
+  top: 140px;
+  left: 75px;
+}
+
+section h2 {
+  position: absolute;
+  font-size: 35px;
+  font-family: 'Gotham Pro', sans-serif;
+  z-index: 1;
+  color: white;
+
+  top: 1100px;
+  left: 350px;
+
+  transition-property: transform;
+  transition-duration: 1000ms;
+}
+
+.text {
+  font-family: 'Gotham Pro', sans-serif;
+  color: #0d319c;
+
+  font-size: 35px;
+  position: absolute;
+  z-index: 1;
+}
+
+.peak-one {
+  top: 397px;
+  left: 228px;
+}
+
+.peak-two {
+  top: 525px;
+  left: 364px;
+}
+
+.peak-three {
+  top: 272px;
+  left: 637px;
+}
+
+.peak-four {
+  top: 511px;
+  left: 785px;
+}
+
+/* navigation */
+
+/* nav {
+  position: fixed;
+  top: 377px;
+  left: 984px;
+
+  width: 30px;
+  height: 90px;
+  z-index: 1;
+} */
+
+.cirle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: fixed;
+
+}
+
+.point-one {
+  top: 377px;
+  left: 984px;
+}
+
+.point-two {
+  top: 399px;
+  left: 984px;
+}
+
+.point-three {
+  top: 421px;
+  left: 984px;
+}
+
+.orange {
+  background-color: orange;
+  z-index: 1;
+  opacity: 0;
+}
+
+.white {
+  background-color: white;
+  z-index: 1
+}
+
+/* chunks */
+
+.chunk {
+
+  position: absolute;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-property: transform;
+  transition-duration: 1000ms;
+  background-image: url("../images/stone.png");
+}
+
+/* end point Y - 930px */
+
+.c-one {
+  width: 50px;
+  height: 50px;
+  top: 1130px;
+  left: 75px;
+}
+
+/* end point Y - 1220px */
+
+.c-two {
+  width: 125px;
+  height: 125px;
+  top: 1420px;
+  left: 250px;
+  /* transform: rotate(45deg); */
+}
+
+/* end point Y - 1420px */
+
+.c-three {
+  width: 65px;
+  height: 65px;
+  top: 1620px;
+  left: 690px;
+  filter: blur(6px);
+  /* transform: rotate(-45deg); */
+}
+
+/* end point Y - 900 */
+
+.c-four {
+  width: 200px;
+  height: 200px;
+  top: 1100px;
+  left: 900px;
+  filter: blur(3px);
+}
+
+
+
+
+/* footer */
+
+footer {
+  margin: 0 auto;
+  position: fixed;
+  top: 680px;
+  left: 465px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-family: ;
+  font-size: 18px;
+  color: white;
+  z-index: 2;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  transform: rotate(-45deg);
+  border-bottom: 4px solid white;
+  border-left: 4px solid white;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  z-index: 2;
+}
+
+.sunshine {
+  width: 600px;
+  height: 100px;
+  border-radius: 300px / 50px;
+  position: absolute;
+  background-color: #f78b20;
+  z-index: 1;
+  filter: blur(20px);
+  top: 70%;
+}

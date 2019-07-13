@@ -1,4 +1,8 @@
+function test() {
 
+}
+
+var messageMain = 'Hello World';
 
 // add swipe interaction with touchscreen
 
@@ -39,7 +43,7 @@ function switchHandler(switch) {
   }
 };
 
-function moveElements (page, direction) {
+function moveElements(page, direction) {
   // get four stones
   var chunks = document.querySelectorAll('.chunk');
   // h2 from second page
@@ -75,50 +79,53 @@ function moveElements (page, direction) {
   }
 };
 
+
+
 function pageFirstForward() {
-  // debugger
+  debugger
   // change page
   document.querySelector('.parralax').classList.add('first');
   // sidebar indicator
-  document.querySelector('.point-one').classList.add('toggle-on');
+  document.getElementById('point-one-orange').classList.remove('toggle-on');
+  document.getElementById('point-two-orange').classList.add('toggle-on');
   // transition of stones simultaneosly
   moveElements('first', 'forward');
   // transition
-  counterOfPage = 1;
+  // counterOfPage = 1;
 
 };
 
 function pageSecondForward() {
   document.querySelector('.parralax').classList.add('second');
 
-  document.querySelector('.point-two').classList.remove('toggle-on');
-  document.querySelector('.point-three').classList.add('toggle-on');
+  document.getElementById('point-two-orange').classList.remove('toggle-on');
+  document.getElementById('point-three-orange').classList.add('toggle-on');
 
   moveElements('second', 'forward');
 
   counterOfPage = 2;
-}
+};
 
 function pageSecondBackward() {
 
   document.querySelector('.parralax').classList.remove('second');
 
-  document.querySelector('.point-three').classList.remove('toggle-on');
-  document.querySelector('.point-two').classList.add('toggle-on');
+  document.getElementById('point-three-orange').classList.remove('toggle-on');
+  document.getElementById('point-two-orange').classList.add('toggle-on');
 
   moveElements('second', 'backward');
 
   counterOfPage = 1;
-}
+};
 
 function pageFirstBackward() {
 
   document.querySelector('.parralax').classList.remove('first');
 
-  document.querySelector('.point-two').classList.remove('toggle-on');
-  document.querySelector('.point-one').classList.add('toggle-on');
+  document.getElementById('point-two-orange').classList.remove('toggle-on');
+  document.getElementById('point-one-orange').classList.add('toggle-on');
 
   moveElements('first', 'backward');
 
   counterOfPage = 0;
-}
+};

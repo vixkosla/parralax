@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 768px;
-  overflow: hidden;
+  width: 100%;
 }
 
 /* universal style */
@@ -42,14 +42,14 @@ html, body {
 /* layer 0 (z-index: 1) */
 
 .parralax {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 1024px;
   height: 2304px;
   overflow: hidden;
   background-image: url("../images/roadmap.png");
   background-size: cover;
   background-position: center;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   transition-property: transform;
@@ -455,6 +455,10 @@ footer p {
   top: 50%;
   left: 35%;
   z-index: 2;
+}
+
+.arrow:hover {
+  top: 55%;
 }
 
 .sunshine {

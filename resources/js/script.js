@@ -17,7 +17,8 @@ startTime;
 // swap event block
 
 debugger
-touchsurface.addEventListener('touchstart', function(e){
+touchsurface.addEventListener('ontouchstart', function(e){
+      alert("Hello World!");
       if (e.target.tagName === 'footer'){
         if (counterOfPage === 0) {
              pageFirstForward();

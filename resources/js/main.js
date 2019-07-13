@@ -1,6 +1,3 @@
-function test() {
-
-}
 
 var messageMain = 'Hello World';
 
@@ -49,6 +46,8 @@ function moveElements(page, direction) {
   // h2 from second page
   var text = document.getElementById('pathogenesis');
 
+
+
   switch (page) {
     case 'first':
     if (direction === "forward") {
@@ -56,11 +55,13 @@ function moveElements(page, direction) {
           chunk.classList.add('drown-first');
       });
       text.classList.add('drown-first');
+      nav.classList.add('first-sections');
     } else if (direction === "backward") {
       chunks.forEach(function (chunk) {
           chunk.classList.remove('drown-first');
       });
       text.classList.remove('drown-first')
+      nav.classList.remove('first-sections');
     }
       break;
     case 'second':
@@ -68,12 +69,14 @@ function moveElements(page, direction) {
       chunks.forEach(function (chunk) {
           chunk.classList.add('drown-second');
       });
-      text.classList.add('drown-second')
+      text.classList.add('drown-second');
+      nav.classList.add('second-sections');
     } else if (direction === "backward") {
       chunks.forEach(function (chunk) {
           chunk.classList.remove('drown-second');
       });
-      text.classList.remove('drown-second')
+      text.classList.remove('drown-second');
+      nav.classList.remove('second-sections');
     }
       break;
   }

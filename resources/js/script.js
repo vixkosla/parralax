@@ -3,62 +3,62 @@ var message = 'Hello World';
 var pages = 2;
 var counterOfPage = 0; //number of page
 
-var touchsurface = document.querySelector('body'),
-swipedir,
-startX,
-startY,
-distX,
-distY,
-threshold = 150, //required min distance traveled to be considered swipe
-restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-allowedTime = 300, // maximum time allowed to travel that distance
-elapsedTime,
-startTime,
-// swap event block
-
-touchsurface.addEventListener('touchstart', function(e){
-      if (e.target.tagName === 'footer'){
-        if (counterOfPage === 0) {
-             pageFirstForward();
-             counterOfPage = 1
-        } else if (counterOfPage === 1) {
-             pageSecondForward();
-             counterOfPage = 2;
-        } return undefined;
-        e.preventDefault();
-      }
-
-      var touchobj = e.changedTouches[0]
-      swipedir = 'none'
-      dist = 0
-      startX = touchobj.pageX
-      startY = touchobj.pageY
-      startTime = new Date().getTime() // record time when finger first makes contact with surface
-
-      e.preventDefault()
-  }, false)
-
-touchsurface.addEventListener('touchmove', function(e){
-    e.preventDefault() // prevent scrolling when inside DIV
-}, false)
-
-touchsurface.addEventListener('touchend', function(e){
-    var touchobj = e.changedTouches[0]
-    distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-    distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-    elapsedTime = new Date().getTime() - startTime // get time elapsed
-    if (elapsedTime <= allowedTime){ // first condition for awipe met
-        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-            swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-        }
-        else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-            swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-        }
-    }
-    swapHandler(swipedir)
-
-    e.preventDefault()
-}, false)
+// var touchsurface = document.querySelector('body'),
+// swipedir,
+// startX,
+// startY,
+// distX,
+// distY,
+// threshold = 150, //required min distance traveled to be considered swipe
+// restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+// allowedTime = 300, // maximum time allowed to travel that distance
+// elapsedTime,
+// startTime,
+// // swap event block
+//
+// touchsurface.addEventListener('touchstart', function(e){
+//       if (e.target.tagName === 'footer'){
+//         if (counterOfPage === 0) {
+//              pageFirstForward();
+//              counterOfPage = 1
+//         } else if (counterOfPage === 1) {
+//              pageSecondForward();
+//              counterOfPage = 2;
+//         } return undefined;
+//         e.preventDefault();
+//       }
+//
+//       var touchobj = e.changedTouches[0]
+//       swipedir = 'none'
+//       dist = 0
+//       startX = touchobj.pageX
+//       startY = touchobj.pageY
+//       startTime = new Date().getTime() // record time when finger first makes contact with surface
+//
+//       e.preventDefault()
+//   }, false)
+//
+// touchsurface.addEventListener('touchmove', function(e){
+//     e.preventDefault() // prevent scrolling when inside DIV
+// }, false)
+//
+// touchsurface.addEventListener('touchend', function(e){
+//     var touchobj = e.changedTouches[0]
+//     distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+//     distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+//     elapsedTime = new Date().getTime() - startTime // get time elapsed
+//     if (elapsedTime <= allowedTime){ // first condition for awipe met
+//         if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+//             swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+//         }
+//         else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+//             swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+//         }
+//     }
+//     swapHandler(swipedir)
+//
+//     e.preventDefault()
+// }, false)
 
 // logic block
 
@@ -96,6 +96,8 @@ function pageSecondForward() {
 
   moveElements('second', 'forward');
 
+  document.querySelector('footer').classList.add('vanish');
+
   counterOfPage = 2;
 };
 
@@ -106,6 +108,8 @@ function pageSecondBackward() {
   document.getElementById('point-two-orange').classList.add('toggle-on');
 
   moveElements('second', 'backward');
+
+  document.querySelector('footer').classList.remove('vanish');
 
   counterOfPage = 1;
 };
@@ -127,6 +131,10 @@ function moveElements(page, direction) {
   // h2 from second page
   var text = document.getElementById('pathogenesis');
 
+  // var nav = document.querySelector('nav');
+
+  // var footer = document.querySelector('footer');
+
   switch (page) {
     case 'first':
     if (direction === "forward") {
@@ -134,11 +142,13 @@ function moveElements(page, direction) {
           chunk.classList.add('drown-first');
       });
       text.classList.add('drown-first');
+      // nav.classList.add('first-sections');
     } else if (direction === "backward") {
       chunks.forEach(function (chunk) {
           chunk.classList.remove('drown-first');
       });
       text.classList.remove('drown-first')
+      // nav.classList.remove('first-sections');
     }
       break;
     case 'second':
@@ -146,12 +156,16 @@ function moveElements(page, direction) {
       chunks.forEach(function (chunk) {
           chunk.classList.add('drown-second');
       });
-      text.classList.add('drown-second')
+      text.classList.add('drown-second');
+
+      // nav.classList.add('second-sections');
     } else if (direction === "backward") {
       chunks.forEach(function (chunk) {
           chunk.classList.remove('drown-second');
       });
-      text.classList.remove('drown-second')
+      text.classList.remove('drown-second');
+      // nav.classList.remove('second-sections');
+
     }
       break;
   }

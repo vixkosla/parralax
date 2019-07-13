@@ -53,7 +53,8 @@ html, body {
   top: 0;
   left: 0;
   transition-property: transform;
-  transition-duration: 500ms;
+  transition-duration: 600ms;
+  z-index: 0;
 }
 
 /* animation */
@@ -192,13 +193,13 @@ html, body {
   }
 }
 
-.fire {
+/* .fire {
   transform: scale(4);
   opacity: 0;
   transition-property: transform, opacity;
   transition-duration: 1000ms;
 
-}
+} */
 
 /* text block */
 /* screen one */
@@ -259,48 +260,57 @@ section h2 {
 
 /* navigation */
 
-/* nav {
+nav {
   position: fixed;
   top: 377px;
   left: 984px;
+  z-index: 2;
+}
 
-  width: 30px;
-  height: 90px;
-  z-index: 1;
+/* .first-sections {
+  transform: translateY(768px);
+}
+
+.second-sections {
+  transform: translateY(1536px);
 } */
 
 .cirle {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  position: fixed;
-
+  position: absolute;
+  z-index: 3;
 }
 
 .point-one {
-  top: 377px;
-  left: 984px;
+  top: 0;
+  left: 0;
+  /* top: 377px;
+  left: 984px; */
 }
 
 .point-two {
-  top: 399px;
-  left: 984px;
+  top: 22px;
+  left: 0;
+  /* top: 399px;
+  left: 984px; */
 }
 
 .point-three {
-  top: 421px;
-  left: 984px;
+  top: 44px;
+  left: 0;
+  /* top: 421px;
+  left: 984px; */
 }
 
 .orange {
   background-color: orange;
-  z-index: 1;
   opacity: 0;
 }
 
 .white {
   background-color: white;
-  z-index: 1
 }
 
 /* chunks */
@@ -372,6 +382,12 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
+
+.vanish {
+  opacity: 0;
 }
 
 footer p {
